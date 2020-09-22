@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import './index.css';
-import App from './Appp';
+import './index.css';
+import Appp from "./Appp";
 
 
 ReactDOM.render(
   <>
-    <Appp />
+      {/*<div>*/}
+        <Appp />
+      {/*</div>*/}
   </>,
   document.getElementById('root')
 );
