@@ -11,7 +11,6 @@ const Appp = () => {
     const IncNub = () => {
         setCount(count + 1)
     }
-
     return (
         <>
             <h1>{count}</h1>
@@ -21,3 +20,4 @@ const Appp = () => {
 };
 
 export default Appp;
+
