@@ -24,16 +24,15 @@
 
 import React, {useState} from "react";
 
-
 const Appp = () => {
 
     let Time = new Date().toLocaleTimeString()
 
-    const [ctime , setCtime] = useState(Time)
+    const [ctime, setCtime] = useState(Time)
 
 
-    const Ctime = ()=>{
-     let  newTime = new Date().toLocaleTimeString()
+    const Ctime = () => {
+        let newTime = new Date().toLocaleTimeString()
         setCtime(newTime);
     }
 
