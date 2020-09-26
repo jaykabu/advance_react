@@ -22,7 +22,7 @@ code {
   font-family: 'Courier Prime', monospace;
 }
 
-div{
+ div{
   width: 100%;
   height: 100vh;
   display: flex;
@@ -57,4 +57,5 @@ button{
   text-transform: uppercase;
   cursor: pointer;
 }
+
 
