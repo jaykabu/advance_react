@@ -55,13 +55,16 @@
 //     const purple = "8e44ad";
 //     const [bg, setBg] = useState(purple)
 //     const [name , setName] = useState("CLICK ME")
-//
+
+// // Single CLick
+
 //     const bgChange = () => {
 //         const cRed = "#FE2E2E";
 //          setBg(cRed)
 //         setName('Ouch 😲');
 //     }
-//
+// //DoubleClick
+
 //     const cColor = () => {
 //         let cBlue = "black";
 //         setBg(cBlue)
@@ -81,6 +84,7 @@
 // export default Appp;
 //
 //
+
 
 //METHOD 1
 /*
@@ -205,62 +209,108 @@ const Appp = () => {
     //Use For NAME :
 
     const [fullName, setFullName] = useState({
-        fname: '',
-        lname: ''
+        firstname: '',
+        lastname: '',
+        email: '',
+        phone: ''
     })
+
 
 
     const inputEvent = (event) => {
         console.log(event.target.value)
         console.log(event.target.name)
 
-        const value = event.target.value;
-        const name = event.target.name
+        // const value = event.target.value;
+        // const name = event.target.name;
+
+        const {value, name} = event.target
 
         setFullName((previousState) => {
-                if (name === 'fName') {
-                    return {
-                        fname: value,
-                        lname: previousState.lname
-                    };
 
-                } else if (name === 'lName') {
-                    return {
-                        fname: previousState.fname,
-                        lname: value
-                    }
+                return {
+                    ...previousState,
+                    [name]: value
                 }
 
+
+                // if (name === 'fName') {
+                //     return {
+                //         fname: value,
+                //         lname: previousState.lname,
+                //         email: previousState.email,
+                //         phone: previousState.phone
+                //
+                //     };
+                //
+                // } else if (name === 'lName') {
+                //     return {
+                //         fname: previousState.fname,
+                //         lname: value,
+                //         email: previousState.email,
+                //         phone: previousState.phone
+                //     }
+                // } else if (name === 'email') {
+                //     return {
+                //         fname: previousState.fname,
+                //         lname: previousState.lname,
+                //         email: value,
+                //         phone: previousState.phone
+                //     }
+                // } else if (name === 'phone') {
+                //     return {
+                //         fname: previousState.fname,
+                //         lname: previousState.lname,
+                //         email: previousState.email,
+                //         phone: value
+                //     }
+                //
+                // }
             }
         )
-
-
     }
 
     const inputSubmit = (event) => {
         event.preventDefault();
-        // alert('Form Submitted')
+
     }
+
+    //form using 'CLick' Event
 
     return (
         <>
             <div>
-                //form using 'CLick' Event
+
+
                 <form onClick={inputSubmit}>
                     <div>
-                        <h1>Hello {fullName.fname} {fullName.lname} </h1>
+                        <h1>Hello {fullName.firstname} {fullName.lastname}  </h1>
+                        <p>{fullName.email} </p>
+                        <p>{fullName.phone}</p>
 
                         <input type={'text'}
                                placeholder={'Enter Your Name'}
-                               name={'fName'}
+                               name={'firstname'}
                                onChange={inputEvent}
-                               value={fullName.fname}/>
+                               value={fullName.firstname}/>
 
                         <input type={'text'}
                                placeholder={'Enter Your Lastname'}
-                               name={'lName'}
+                               name={'lastname'}
                                onChange={inputEvent}
-                               value={fullName.lname}/>
+                               value={fullName.lastname}/>
+
+                        <input type={'email'}
+                               placeholder={'Enter Your Email'}
+                               name={'email'}
+                               onChange={inputEvent}
+                               value={fullName.email}/>
+
+                        <input type={'number'}
+                               placeholder={'Enter Your PhoneNumber'}
+                               name={'phone'}
+                               onChange={inputEvent}
+                               value={fullName.phone}/>
 
                         <button type={'Submit'}> Submit</button>
                     </div>
@@ -271,4 +321,9 @@ const Appp = () => {
 };
 
 export default Appp;
+
+
+
+
+
 
