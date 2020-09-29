@@ -202,128 +202,218 @@ export default Appp;
 //Using 1 hook State and Multiple Input form State
 
 
+// import React, {useState} from "react";
+//
+// const Appp = () => {
+//
+//     //Use For NAME :
+//
+//     const [fullName, setFullName] = useState({
+//         firstname: '',
+//         lastname: '',
+//         email: '',
+//         phone: ''
+//     })
+//
+//
+//
+//     const inputEvent = (event) => {
+//         console.log(event.target.value)
+//         console.log(event.target.name)
+//
+//         // const value = event.target.value;
+//         // const name = event.target.name;
+// //Array Dis
+//
+//         const {value, name} = event.target
+//
+//         setFullName((previousState) => {
+//
+//                 return {
+//                     ...previousState,
+//                     [name]: value
+//                 }
+//
+//
+//                 // if (name === 'fName') {
+//                 //     return {
+//                 //         fname: value,
+//                 //         lname: previousState.lname,
+//                 //         email: previousState.email,
+//                 //         phone: previousState.phone
+//                 //
+//                 //     };
+//                 //
+//                 // } else if (name === 'lName') {
+//                 //     return {
+//                 //         fname: previousState.fname,
+//                 //         lname: value,
+//                 //         email: previousState.email,
+//                 //         phone: previousState.phone
+//                 //     }
+//                 // } else if (name === 'email') {
+//                 //     return {
+//                 //         fname: previousState.fname,
+//                 //         lname: previousState.lname,
+//                 //         email: value,
+//                 //         phone: previousState.phone
+//                 //     }
+//                 // } else if (name === 'phone') {
+//                 //     return {
+//                 //         fname: previousState.fname,
+//                 //         lname: previousState.lname,
+//                 //         email: previousState.email,
+//                 //         phone: value
+//                 //     }
+//                 //
+//                 // }
+//             }
+//         )
+//     }
+//
+//     const inputSubmit = (event) => {
+//         event.preventDefault();
+//
+//     }
+//
+//     //form using 'CLick' Event
+//
+//     return (
+//         <>
+//             <div>
+//
+//
+//                 <form onClick={inputSubmit}>
+//                     <div>
+//                         <h1> Login   </h1>
+//                         <p>{fullName.firstname}{fullName.lastname}</p>
+//                             <p> {fullName.email} </p>
+//                             <p> {fullName.phone} </p>
+//
+//                         <input type={'text'}
+//                                placeholder={'Enter Your Name'}
+//                                name={'firstname'}
+//                                onChange={inputEvent}
+//                                value={fullName.firstname}/>
+//
+//                         <input type={'text'}
+//                                placeholder={'Enter Your Lastname'}
+//                                name={'lastname'}
+//                                onChange={inputEvent}
+//                                value={fullName.lastname}/>
+//
+//                         <input type={'email'}
+//                                placeholder={'Enter Your Email'}
+//                                name={'email'}
+//                                onChange={inputEvent}
+//                                value={fullName.email}/>
+//
+//                         <input type={'number'}
+//                                placeholder={'Enter Your PhoneNumber'}
+//                                name={'phone'}
+//                                onChange={inputEvent}
+//                                value={fullName.phone}/>
+//
+//                         <button type={'Submit'}> Submit</button>
+//                     </div>
+//                 </form>
+//             </div>
+//         </>
+//     )
+// };
+//
+// export default Appp;
+
+
 import React, {useState} from "react";
+import './index.css';
+
 
 const Appp = () => {
 
-    //Use For NAME :
-
     const [fullName, setFullName] = useState({
-        firstname: '',
-        lastname: '',
-        email: '',
-        phone: ''
-    })
+        name: "",
+        email: "",
+        pass: ""
+    });
 
-
-
-    const inputEvent = (event) => {
-        console.log(event.target.value)
-        console.log(event.target.name)
-
-        // const value = event.target.value;
-        // const name = event.target.name;
-
+    const eventInput = (event) => {
         const {value, name} = event.target
 
-        setFullName((previousState) => {
-
-                return {
-                    ...previousState,
-                    [name]: value
-                }
-
-
-                // if (name === 'fName') {
-                //     return {
-                //         fname: value,
-                //         lname: previousState.lname,
-                //         email: previousState.email,
-                //         phone: previousState.phone
-                //
-                //     };
-                //
-                // } else if (name === 'lName') {
-                //     return {
-                //         fname: previousState.fname,
-                //         lname: value,
-                //         email: previousState.email,
-                //         phone: previousState.phone
-                //     }
-                // } else if (name === 'email') {
-                //     return {
-                //         fname: previousState.fname,
-                //         lname: previousState.lname,
-                //         email: value,
-                //         phone: previousState.phone
-                //     }
-                // } else if (name === 'phone') {
-                //     return {
-                //         fname: previousState.fname,
-                //         lname: previousState.lname,
-                //         email: previousState.email,
-                //         phone: value
-                //     }
-                //
-                // }
+        setFullName((preState) => {
+            return {
+                ...preState,
+                [name]: value
             }
-        )
+        })
     }
 
     const inputSubmit = (event) => {
         event.preventDefault();
-
     }
 
-    //form using 'CLick' Event
 
     return (
         <>
-            <div>
+
+            <div className="limiter">
+                <div className="container-login100">
+                    <div className="wrap-login100">
+                        <div className="login100-pic js-tilt" data-tilt>
+                            <img src="" alt="IMG"/>
+                        </div>
+                        <form className="login100-form validate-form" onClick={inputSubmit}>
+					<span className="login100-form-title">
+						Member Login
+					</span>
+
+                            {/*<h1> Login </h1>*/}
+                            {/*<p>{fullName.name}</p>*/}
+                            {/*<p> {fullName.email} </p>*/}
+                            {/*<p> {fullName.pass} </p>*/}
+
+                            <div className="wrap-input100 validate-input"
+                                 data-validate="Valid email is required: ex@abc.xyz">
+                                <input className="input100" type="text" name="name" onChange={eventInput}
+                                       placeholder="name" value={fullName.name}/>
+                                <span className="focus-input100"></span>
+                                <span className="symbol-input100">
+							<i className="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+                            </div>
+                            <div className="wrap-input100 validate-input"
+                                 data-validate="Valid email is required: ex@abc.xyz">
+                                <input className="input100" type="text" name="email" onChange={eventInput}
+                                       placeholder="Email" value={fullName.email}/>
+                                <span className="focus-input100"></span>
+                                <span className="symbol-input100">
+							<i className="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+                            </div>
+
+                            <div className="wrap-input100 validate-input" data-validate="Password is required">
+                                <input className="input100" type="password" name="pass" onChange={eventInput}
+                                       placeholder="Password" value={fullName.pass}/>
+                                <span className="focus-input100"></span>
+                                <span className="symbol-input100">
+							<i className="fa fa-lock" aria-hidden="true"></i>
+						</span>
+                            </div>
+
+                            <div className="container-login100-form-btn">
+                                <button className="login100-form-btn">
+                                    Login
+                                </button>
+                            </div>
 
 
-                <form onClick={inputSubmit}>
-                    <div>
-                        <h1>Hello {fullName.firstname} {fullName.lastname}  </h1>
-                        <p>{fullName.email} </p>
-                        <p>{fullName.phone}</p>
+                        </form>
 
-                        <input type={'text'}
-                               placeholder={'Enter Your Name'}
-                               name={'firstname'}
-                               onChange={inputEvent}
-                               value={fullName.firstname}/>
-
-                        <input type={'text'}
-                               placeholder={'Enter Your Lastname'}
-                               name={'lastname'}
-                               onChange={inputEvent}
-                               value={fullName.lastname}/>
-
-                        <input type={'email'}
-                               placeholder={'Enter Your Email'}
-                               name={'email'}
-                               onChange={inputEvent}
-                               value={fullName.email}/>
-
-                        <input type={'number'}
-                               placeholder={'Enter Your PhoneNumber'}
-                               name={'phone'}
-                               onChange={inputEvent}
-                               value={fullName.phone}/>
-
-                        <button type={'Submit'}> Submit</button>
                     </div>
-                </form>
+                </div>
             </div>
+
         </>
     )
-};
-
+}
 export default Appp;
-
-
-
-
-
-
