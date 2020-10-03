@@ -9,8 +9,8 @@ const LastName = createContext();
 const ContextApi = () => {
     return (
         <>
-            <FirstName.Provider value={'Jay'}>
-                <LastName.Provider value={'Kabutarwala'}>
+            <FirstName.Provider value={'JaY'}>
+                <LastName.Provider value={'Kabu'}>
                     <ComA/>
                 </LastName.Provider>
             </FirstName.Provider>
