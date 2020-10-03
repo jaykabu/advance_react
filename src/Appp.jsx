@@ -350,6 +350,8 @@ const Appp = () => {
 
     const inputSubmit = (event) => {
         event.preventDefault();
+
+        setFullName(fullName)
     }
 
 
