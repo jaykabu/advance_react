@@ -3,6 +3,7 @@
 import React from "react";
 import {FirstName, LastName} from "./ContextApi";
 
+//CONTEXT API method-1
 const ComC = () => {
     return (
         <>

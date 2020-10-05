@@ -4,7 +4,7 @@ import React, {useContext} from 'react';
 // import ComC from './ComC'
 import {FirstName, LastName} from "./ContextApi";
 
-
+//using useContext hook method-2
 const ComB = () => {
 
     const fname = useContext(FirstName)
