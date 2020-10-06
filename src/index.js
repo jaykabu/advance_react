@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Appp from "./Appp";
-import ContextApi from "./ContextApi";
-import Apicall from "./Apicall";
+import Router from "./Router";
+import {BrowserRouter} from "react-router-dom";
 
 
 ReactDOM.render(
@@ -11,7 +10,12 @@ ReactDOM.render(
         {/*<div>*/}
         {/*  <Appp />*/}
         {/*<ContextApi/>*/}
-        <Apicall/>
+        {/*<Apicall/>*/}
+
+        <BrowserRouter>
+            <Router/>
+        </BrowserRouter>
+
         {/*</div>*/}
     </>,
     document.getElementById('root')
