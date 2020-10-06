@@ -549,3 +549,23 @@ iframe {
 span {
     font: bold;
 }
+
+/*//ROUTE*/
+
+a {
+    color: #61dafb;
+}
+
+a.active_class {
+    color: rgb(119, 0, 255);
+    border-bottom: 2px solid red;
+}
+
+.menu_style {
+    width: 100%;
+    line-height: 60px;
+    background-color: #20232a;
+    display: flex;
+    justify-content: space-around;
+
+}
