@@ -1,12 +1,14 @@
 //USE PARAMS
 
 import React from "react";
-import {useLocation, useParams} from 'react-router-dom'
+import {useLocation, useParams, useHistory} from 'react-router-dom'
 
 
 const User = () => {
     const {name, lname} = useParams();
     const location = useLocation();
+    const history = useHistory();
+    // console.log(history)
     return (
         <>
             <h1>user page {name} {lname}  </h1>
@@ -14,11 +16,12 @@ const User = () => {
 
             {location.pathname === `/user/jay/kabu` ? (
                 <button onClick={() => {
-                    alert('you are awesome')
+                    // history.goBack()
+                    history.push('/contact')
                 }}>Click me</button>
             ) : null}
 
-
+            <p></p>
         </>
     )
 };
