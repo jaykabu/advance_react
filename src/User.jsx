@@ -1,20 +1,24 @@
 //USE PARAMS
 
 import React from "react";
-import {useParams} from 'react-router-dom'
+import {useLocation, useParams} from 'react-router-dom'
 
-// const User = ({match}) => {
-//     return (
-//         <>
-//             <h1>user page {match.params.name}</h1>
-//         </>
-//     )
-// };
-const User = ({match}) => {
+
+const User = () => {
     const {name, lname} = useParams();
+    const location = useLocation();
     return (
         <>
-            <h1>user page {name} {lname} </h1>
+            <h1>user page {name} {lname}  </h1>
+            <p>MY CURRENT LOCATION IS {location.pathname}</p>
+
+            {location.pathname === `/user/jay/kabu` ? (
+                <button onClick={() => {
+                    alert('you are awesome')
+                }}>Click me</button>
+            ) : null}
+
+
         </>
     )
 };

@@ -21,7 +21,7 @@ const Router = () => {
                 <Route exact path={'/contact'} component={Contact}/>
                 <Route exact path={'/services'} component={() => <Services name={'services'}/>}/>
                 <Route exact path={'/contact/name'} component={Name}/>
-                <Route path={'/user/:name/:lname'} component={User}/>
+                <Route exact path={'/user/:name/:lname'} component={User}/>
                 <Route component={Error}/>
             </Switch>
 
