@@ -7,6 +7,7 @@ import Contact from "./Contact";
 import Error from "./Error";
 import Navbar from "./Navbar";
 import Services from './Services'
+import User from "./User";
 
 const Router = () => {
     const Name = () => {
@@ -19,7 +20,8 @@ const Router = () => {
                 <Route exact path={'/'} component={() => <About name={'About'}/>}/>
                 <Route exact path={'/contact'} component={Contact}/>
                 <Route exact path={'/services'} component={() => <Services name={'services'}/>}/>
-                <Route path={'/contact/name'} component={Name}/>
+                <Route exact path={'/contact/name'} component={Name}/>
+                <Route path={'/user/:name/:lname'} component={User}/>
                 <Route component={Error}/>
             </Switch>
 
