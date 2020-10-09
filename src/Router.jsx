@@ -8,6 +8,7 @@ import Error from "./Error";
 import Navbar from "./Navbar";
 import Services from './Services'
 import User from "./User";
+import Search from "./Search";
 
 const Router = () => {
     const Name = () => {
@@ -20,6 +21,7 @@ const Router = () => {
                 <Route exact path={'/'} component={() => <About name={'About'}/>}/>
                 <Route exact path={'/contact'} component={Contact}/>
                 <Route exact path={'/services'} component={() => <Services name={'services'}/>}/>
+                <Route exact path={'/search'} component={Search}/>
                 <Route exact path={'/contact/name'} component={Name}/>
                 <Route exact path={'/user/:name/:lname'} component={User}/>
                 <Route component={Error}/>
