@@ -26,7 +26,7 @@ const Router = () => {
                 <Route exact path={'/search'} component={Search}/>
                 <Route exact path={'/contact/name'} component={Name}/>
                 <Route exact path={'/user/:name/:lname'} component={User}/>
-                {/*<Route component={Error}/>*/}
+                <Route component={Error}/>
                 <Redirect to={'/'}/>
             </Switch>
 

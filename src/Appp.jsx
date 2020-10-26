@@ -4,8 +4,6 @@
 //
 // const Appp = () => {
 //
-//     const state = useState()
-//
 //     const [count, setCount] = useState(0);
 //
 //     const IncNub = () => {
@@ -14,7 +12,7 @@
 //     return (
 //         <>
 //             <h1>{count}</h1>
-//             <button onClick={IncNub}>Click Me</button>
+//             <button onClick={IncNub}> Click Me </button>
 //         </>
 //     )
 // };
@@ -48,41 +46,38 @@
 // export default Appp;
 
 
-// import React, {useState} from "react";
-//
-// const Appp = () => {
-//
-//     const purple = "8e44ad";
-//     const [bg, setBg] = useState(purple)
-//     const [name , setName] = useState("CLICK ME")
+import React, {useState} from "react";
 
-// // Single CLick
+const Appp = () => {
 
-//     const bgChange = () => {
-//         const cRed = "#FE2E2E";
-//          setBg(cRed)
-//         setName('Ouch 😲');
-//     }
-// //DoubleClick
+    const purple = "8e44ad";
+    const [bg, setBg] = useState(purple)
+    const [name, setName] = useState("CLICK ME")
 
-//     const cColor = () => {
-//         let cBlue = "black";
-//         setBg(cBlue)
-//         setName('angry 😠')
-//
-//     }
-//
-//     return (
-//         <>
-//             <div style={{backgroundColor: bg}}>
-//                 <button onClick={bgChange}  onDoubleClick={cColor} >{name}  </button>
-//             </div>
-//         </>
-//     )
-// };
-//
-// export default Appp;
-//
+// Single CLick
+    const bgChange = () => {
+        const cRed = "#FE2E2E";
+        setBg(cRed)
+        setName('Ouch 😲');
+    }
+//DoubleClick
+    const cColor = () => {
+        let cBlue = "black";
+        setBg(cBlue)
+        setName('angry 😠')
+
+    }
+    return (
+        <>
+            <div style={{backgroundColor: bg}}>
+                <button onClick={bgChange} onDoubleClick={cColor}>{name}  </button>
+            </div>
+        </>
+    )
+};
+
+export default Appp;
+
 //
 
 
@@ -325,97 +320,97 @@ export default Appp;
 // export default Appp;
 
 
-import React, {useState} from "react";
-import './index.css';
-
-
-const Appp = () => {
-
-    const [fullName, setFullName] = useState({
-        name: "",
-        email: "",
-        pass: ""
-    });
-
-    const eventInput = (event) => {
-        const {value, name} = event.target
-
-        setFullName((preState) => {
-            return {
-                ...preState,
-                [name]: value
-            }
-        })
-    }
-
-    const inputSubmit = (event) => {
-        event.preventDefault();
-
-        setFullName(fullName)
-    }
-
-
-    return (
-        <>
-
-            <div className="limiter">
-                <div className="container-login100">
-                    <div className="wrap-login100">
-                        <div className="login100-pic js-tilt" data-tilt>
-                            <img src="" alt="IMG"/>
-                        </div>
-                        <form className="login100-form validate-form" onClick={inputSubmit}>
-					<span className="login100-form-title">
-						Member Login
-					</span>
-
-                            {/*<h1> Login </h1>*/}
-                            {/*<p>{fullName.name}</p>*/}
-                            {/*<p> {fullName.email} </p>*/}
-                            {/*<p> {fullName.pass} </p>*/}
-
-                            <div className="wrap-input100 validate-input"
-                                 data-validate="Valid email is required: ex@abc.xyz">
-                                <input className="input100" type="text" name="name" onChange={eventInput}
-                                       placeholder="name" value={fullName.name}/>
-                                <span className="focus-input100"></span>
-                                <span className="symbol-input100">
-							<i className="fa fa-envelope" aria-hidden="true"></i>
-						</span>
-                            </div>
-                            <div className="wrap-input100 validate-input"
-                                 data-validate="Valid email is required: ex@abc.xyz">
-                                <input className="input100" type="text" name="email" onChange={eventInput}
-                                       placeholder="Email" value={fullName.email}/>
-                                <span className="focus-input100"></span>
-                                <span className="symbol-input100">
-							<i className="fa fa-envelope" aria-hidden="true"></i>
-						</span>
-                            </div>
-
-                            <div className="wrap-input100 validate-input" data-validate="Password is required">
-                                <input className="input100" type="password" name="pass" onChange={eventInput}
-                                       placeholder="Password" value={fullName.pass}/>
-                                <span className="focus-input100"></span>
-                                <span className="symbol-input100">
-							<i className="fa fa-lock" aria-hidden="true"></i>
-						</span>
-                            </div>
-
-                            <div className="container-login100-form-btn">
-                                <button className="login100-form-btn">
-                                    Login
-                                </button>
-                            </div>
-
-
-                        </form>
-
-                    </div>
-                </div>
-            </div>
-
-        </>
-    )
-}
-export default Appp;
+// import React, {useState} from "react";
+// import './index.css';
+//
+//
+// const Appp = () => {
+//
+//     const [fullName, setFullName] = useState({
+//         name: "",
+//         email: "",
+//         pass: ""
+//     });
+//
+//     const eventInput = (event) => {
+//         const {value, name} = event.target
+//
+//         setFullName((preState) => {
+//             return {
+//                 ...preState,
+//                 [name]: value
+//             }
+//         })
+//     }
+//
+//     const inputSubmit = (event) => {
+//         event.preventDefault();
+//
+//         setFullName(fullName)
+//     }
+//
+//
+//     return (
+//         <>
+//
+//             <div className="limiter">
+//                 <div className="container-login100">
+//                     <div className="wrap-login100">
+//                         <div className="login100-pic js-tilt" data-tilt>
+//                             <img src="" alt="IMG"/>
+//                         </div>
+//                         <form className="login100-form validate-form" onClick={inputSubmit}>
+// 					<span className="login100-form-title">
+// 						Member Login
+// 					</span>
+//
+//                             {/*<h1> Login </h1>*/}
+//                             {/*<p>{fullName.name}</p>*/}
+//                             {/*<p> {fullName.email} </p>*/}
+//                             {/*<p> {fullName.pass} </p>*/}
+//
+//                             <div className="wrap-input100 validate-input"
+//                                  data-validate="Valid email is required: ex@abc.xyz">
+//                                 <input className="input100" type="text" name="name" onChange={eventInput}
+//                                        placeholder="name" value={fullName.name}/>
+//                                 <span className="focus-input100"></span>
+//                                 <span className="symbol-input100">
+// 							<i className="fa fa-envelope" aria-hidden="true"></i>
+// 						</span>
+//                             </div>
+//                             <div className="wrap-input100 validate-input"
+//                                  data-validate="Valid email is required: ex@abc.xyz">
+//                                 <input className="input100" type="text" name="email" onChange={eventInput}
+//                                        placeholder="Email" value={fullName.email}/>
+//                                 <span className="focus-input100"></span>
+//                                 <span className="symbol-input100">
+// 							<i className="fa fa-envelope" aria-hidden="true"></i>
+// 						</span>
+//                             </div>
+//
+//                             <div className="wrap-input100 validate-input" data-validate="Password is required">
+//                                 <input className="input100" type="password" name="pass" onChange={eventInput}
+//                                        placeholder="Password" value={fullName.pass}/>
+//                                 <span className="focus-input100"></span>
+//                                 <span className="symbol-input100">
+// 							<i className="fa fa-lock" aria-hidden="true"></i>
+// 						</span>
+//                             </div>
+//
+//                             <div className="container-login100-form-btn">
+//                                 <button className="login100-form-btn">
+//                                     Login
+//                                 </button>
+//                             </div>
+//
+//
+//                         </form>
+//
+//                     </div>
+//                 </div>
+//             </div>
+//
+//         </>
+//     )
+// }
+// export default Appp;
